@@ -1,6 +1,8 @@
 #!/bin/bash
 
-LOG="/home/pi/display.log"
+LOG="/home/pi/gpihdmiout/display.log"
+GPIENABLE="/home/pi/gpihdmiout/gpi_display_enable.sh"
+
 TVSTATUS=$(tvservice -s)
 # Patched:
 #       state 0x400000 [LCD], 320x240 @ 0.00Hz, progressive
@@ -13,11 +15,10 @@ TVSTATUS=$(tvservice -s)
 # Unpatched, HDMI at boot, then HDMI removed:
 #       state 0x120009 [HDMI CEA (16) RGB lim 16:9], 1920x1080 @ 60.00Hz, progressive
 
-TVCODE=$(echo $TVSTATUS | cut -c7-15)
-
 echo >> $LOG
 date >> $LOG
 echo $TVSTATUS >> $LOG
+TVCODE=$(echo $TVSTATUS | cut -c7-15)
 echo $TVCODE
 if [ $TVCODE == "0x400000" ]; then
     echo "Already patched. Continue booting." >> $LOG
@@ -25,6 +26,6 @@ elif [ $TVCODE == "0x12000a" ]; then
     echo "Unpatched. HDMI connected. Continue booting." >> $LOG
 else
     echo "Unpatched. No HDMI connected. Patch and reboot." >> $LOG
-    /home/pi/gpi_display_enable.sh >> $LOG
+    $GPIENABLE >> $LOG
     reboot
 fi
