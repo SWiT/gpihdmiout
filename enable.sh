@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo 
-echo "--- Uninstall GPi Case LCD display patch ---"
+echo "***************" 
+echo
+echo "Uninstall GPi Case LCD display patch."
 
 ORG="/boot/config.txt"
 BACKUP="/boot/GPi_Case_patch/original_files/config.txt"
@@ -25,8 +26,17 @@ if [ -f "$ORG" ]; then
 fi
 
 echo "Done."
-echo "*****"
-echo "Power off the GPi Case, connect the HDMI cable, then turn it back on."
+echo
+echo "***************"
+echo
+echo "Power off the GPi Case." 
+echo "Connect the HDMI cable."
+echo "Then turn it back on."
 echo 
-echo "Power on the GPi Case WITHOUT the HDMI cable to revert back to the GPi's LCD screen."
-echo "*****"
+echo "Power on the GPi Case "
+echo "WITHOUT the HDMI cable to revert "
+echo "back to the GPi's LCD screen."
+echo
+echo "***************"
+echo
+read -p "Any key to continue..."
