@@ -34,4 +34,4 @@ echo "Then turn it back on."
 echo
 echo "***************"
 echo
-read -p "Any key to continue..."
+#read -p "Any key to continue..."
