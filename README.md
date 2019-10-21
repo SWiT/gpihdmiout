@@ -18,7 +18,7 @@ $ sudo nano /etc/rc.local
     sudo /home/pi/gpihdmiout/detect.sh
 ```
 
-Add Retropie Menu to Enable HDMI.
+Add Retropie Menu to Enable and Disable HDMI.
 ```
 $ ln -s /home/pi/gpihdmiout/enable.sh /home/pi/RetroPie/retropiemenu/"HDMI Output Enable.sh"
 $ ln -s /home/pi/gpihdmiout/disable.sh /home/pi/RetroPie/retropiemenu/"HDMI Output Disable.sh"
