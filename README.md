@@ -1,5 +1,5 @@
 # gpihdmiout
-###Scripts for modifying a GPi Case running Retropie to enable HDMI output.
+### Scripts for modifying a GPi Case running Retropie to enable HDMI output.
 
 Clone the scripts into /home/pi
 ```
