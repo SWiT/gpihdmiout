@@ -34,4 +34,6 @@ echo "Then turn it back on."
 echo
 echo "***************"
 echo
-#read -p "Any key to continue..."
+if [ "$1" != "-y" ]; then
+    read -p "Any key to continue..."
+fi

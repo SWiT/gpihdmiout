@@ -39,4 +39,6 @@ echo "back to the GPi's LCD screen."
 echo
 echo "***************"
 echo
-read -p "Any key to continue..."
+if [ "$1" != "-y" ]; then
+    read -p "Any key to continue..."
+fi

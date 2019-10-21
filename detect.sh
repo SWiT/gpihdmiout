@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOG="/home/pi/gpihdmiout/display.log"
-HDMIDISABLE="/home/pi/gpihdmiout/disable.sh"
+HDMIDISABLE="/home/pi/gpihdmiout/disable.sh -y"
 
 TVSTATUS=$(tvservice -s)
 # Patched:
