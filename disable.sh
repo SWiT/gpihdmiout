@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo 
-echo "--- Install GPi Case LCD display patch ---"
+echo "***************" 
+echo
+echo "Install GPi Case LCD display patch."
 
 ORG="/boot/config.txt"
 BACKUP="/boot/GPi_Case_patch/original_files/config.txt"
@@ -25,3 +26,12 @@ sudo cp /boot/GPi_Case_patch/patch_files/overlays/pwm-audio-pi-zero.dtbo /boot/o
 
 echo "Done."
 echo
+echo "***************" 
+echo
+echo "Power off the GPi Case." 
+echo "Disconnect the HDMI cable."
+echo "Then turn it back on."
+echo
+echo "***************"
+echo
+read -p "Any key to continue..."
