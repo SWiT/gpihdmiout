@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 
-echo "--- Install GPi Case display patch ---"
+echo "--- Install GPi Case LCD display patch ---"
 
 ORG="/boot/config.txt"
 BACKUP="/boot/GPi_Case_patch/original_files/config.txt"

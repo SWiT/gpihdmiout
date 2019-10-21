@@ -10,5 +10,10 @@ Add the HDMI detection script to rc.local before "exit 0".
 ```
 $ sudo nano /etc/rc.local
 
-    sudo /home/pi/gpihdmiout/gpi_display_detect.sh
+    sudo /home/pi/gpihdmiout/detect.sh
+```
+
+Add Retropie Menu to Enable HDMI (and poweroff or reboot)
+```
+$ ln -s /home/pi/gpihdmiout/enable.sh /home/pi/RetroPie/retropiemenu/"HDMI Output.sh"
 ```
