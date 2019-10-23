@@ -19,13 +19,13 @@ echo >> $LOG
 date >> $LOG
 echo $TVSTATUS >> $LOG
 TVCODE=$(echo $TVSTATUS | cut -c7-15)
-echo $TVCODE
+echo $TVCODE >> $LOG
 if [ $TVCODE == "0x400000" ]; then
-    echo "Already patched. Continue booting." >> $LOG
-elif [ $TVCODE == "0x12000a" ]; then
-    echo "Unpatched. HDMI connected. Continue booting." >> $LOG
-else
-    echo "Unpatched. No HDMI connected. Disable HDMI/enable LCD, and reboot." >> $LOG
+    echo "GPi LCD Enabled. Continue booting." >> $LOG
+elif [ $TVCODE == "0x40001" ]; then
+    echo "No HDMI connected. Enable GPi LCD, and reboot." >> $LOG
     $HDMIDISABLE >> $LOG
     reboot
+else
+    echo "HDMI or TV connected? Continue booting." >> $LOG
 fi
