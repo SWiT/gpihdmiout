@@ -18,8 +18,8 @@ TVSTATUS=$(tvservice -s)
 echo >> $LOG
 date >> $LOG
 echo $TVSTATUS >> $LOG
-TVCODE=$(echo $TVSTATUS | cut -c7-15)
-echo $TVCODE >> $LOG
+TVCODE=$(echo $TVSTATUS | cut -c7-14)
+echo "\"$TVCODE\"" >> $LOG
 if [ $TVCODE == "0x400000" ]; then
     echo "GPi LCD Enabled. Continue booting." >> $LOG
 elif [ $TVCODE == "0x40001" ]; then
