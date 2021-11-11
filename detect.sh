@@ -1,9 +1,11 @@
 #!/bin/bash
 
-LOG="/home/pi/gpihdmiout/display.log"
-HDMIDISABLE="/home/pi/gpihdmiout/disable.sh -y"
+# Define the command to disable HDMI and Enable the GPiCase LCD.
+HDMIDISABLE="/home/pi/gpihdmiout/disable.sh -y"     
 
+# Run the tvservice command and store the output for parsing.
 TVSTATUS=$(tvservice -s)
+    
 # Patched:
 #       state 0x400000 [LCD], 320x240 @ 0.00Hz, progressive
 # Unpatched, no HDMI at boot:
@@ -27,17 +29,14 @@ TVSTATUS=$(tvservice -s)
 #   RPi Zero 2
 #       state 0x9 [HDMI CEA (16) RGB lim 16:9], 1920x1080 @ 60.00Hz, progressive
 
-echo >> $LOG
-date >> $LOG
-echo $TVSTATUS >> $LOG
+# Parse the tvservice command output to get just the TV state code.
 TVCODE=$(echo $TVSTATUS | cut -c7-14)
-echo "\"$TVCODE\"" >> $LOG
 if [ $TVCODE == "0x400000" ]; then
-    echo "GPi LCD Enabled. Continue booting." >> $LOG
+    echo "GPi CASE LCD Enabled. Continue booting."
 elif [ $TVCODE == "0x40000" ] || [ $TVCODE == "0x40001" ]; then
-    echo "No HDMI connected. Enable GPi LCD, and reboot." >> $LOG
-    $HDMIDISABLE >> $LOG
+    echo "No HDMI connected. Enable GPi CASE LCD, and reboot."
+    $HDMIDISABLE
     reboot
 else
-    echo "HDMI or TV connected? Continue booting." >> $LOG
+    echo "HDMI connected. Continue booting."
 fi
