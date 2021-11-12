@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Check current state
+# Check if config.txt is the patched copy.
 # Toggle it to the other state.
-DIFF=$(diff /boot/GPi_Case_patch/patch_files/config.txt /boot/config.txt)
-if [ $DIFF == "" ]; then
-    echo "GPi CASE LCD is enabled."
+PATCHED=$(diff /boot/GPi_Case_patch/patch_files/config.txt /boot/config.txt)
+if [ "$PATCHED" == "" ]; then
+    /home/pi/gpihdmiout/enable.sh
 else
-    echo "HDMI is enabled."
+    /home/pi/gpihdmiout/disable.sh
 fi
