@@ -28,13 +28,13 @@ echo "Done."
 echo
 echo "***************"
 echo
-echo "Power off the GPi Case." 
+echo "Power off the GPi CASE." 
 echo "Connect the HDMI cable."
 echo "Then turn it back on."
 echo 
 echo "Power on the GPi Case "
 echo "WITHOUT the HDMI cable to revert "
-echo "back to the GPi's LCD screen."
+echo "back to the GPi CASE LCD screen."
 echo
 echo "***************"
 echo

@@ -27,7 +27,7 @@ echo "Done."
 echo
 echo "***************" 
 echo
-echo "Power off the GPi Case." 
+echo "Power off the GPi CASE." 
 echo "Disconnect the HDMI cable."
 echo "Then turn it back on."
 echo
