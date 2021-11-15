@@ -5,7 +5,11 @@
 
 
 ## Setup
-Clone the scripts into /home/pi
+Download and install the GPiCASE patch from https://support.retroflag.com/
+
+Enabling HDMI overwrites /boot/config.txt with /boot/GPi_Case_patch/original_files/config.txt. Disabling HDMI overwrites /boot/config.txt with /boot/GPi_Case_patch/patch_files/config.txt. Make any needed changes to /boot/config.txt and /boot/GPi_Case_patch/patch_files/config.txt or /boot/GPi_Case_patch/original_files/config.txt like overclocking or audio fixes for RPiZ2. 
+
+Clone the HDMI output scripts into /home/pi
 ```
 $ cd /home/pi
 $ git clone https://github.com/SWiT/gpihdmiout.git
